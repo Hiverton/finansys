@@ -81,9 +81,9 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
   }
 
   private setPageTitle(){
-    if(this.currentAction == "new")
+    if(this.currentAction == "new"){
       this.pageTitle = "Cadastro de nova categoria";
-    else {
+    } else {
       const categoryName = this.category.name || "";
       this.pageTitle = `Editando ${categoryName}`;
     } 
