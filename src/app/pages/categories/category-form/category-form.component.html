@@ -2,7 +2,7 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
     <li class="breadcrumb-item"><a routerLink="/categories">Categorias</a></li>
-    <li class="breadcrumb-item active">Formulário de categorias</li>
+    <li class="breadcrumb-item active">{{pageTitle}}</li>
   </ol>
 </nav>
 
@@ -41,6 +41,13 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="alert alert-danger mt-4" *ngIf="serverErrorMessages">
+    <strong>Erro no servidor:</strong>
+    <ul *ngFor="let error of serverErrorMessages">
+      <li>{{error}}</li>
+    </ul>
   </div>
 
   <button [disabled]="submittingForm || categoryForm.invalid" 
