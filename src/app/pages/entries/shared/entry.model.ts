@@ -21,4 +21,8 @@ export class Entry {
     get paidText(): string {
         return this.paid ? 'Pago' : 'Pendente';
     }
+
+    get types(): string[] {
+        return this.types;
+    }
 }
