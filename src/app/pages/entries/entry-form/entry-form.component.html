@@ -34,7 +34,7 @@
           </select>
         </div>
 
-        <div class="text-danger" *ngIf="entryForm.get('name').invalid && entryForm.get('name').touched">
+        <div class="text-danger" *ngIf="entryForm.get('type').invalid && entryForm.get('type').touched">
           <div *ngIf="entryForm.get('type').errors.required">Dado obrigatório</div>
         </div>
         
@@ -44,7 +44,7 @@
             <input type="text" class="form-control" id="name" formControlName="name">
           </div>
   
-          <div class="text-danger" *ngIf="entryForm.get('name').invalid && entryForm.get('amount').touched">
+          <div class="text-danger" *ngIf="entryForm.get('name').invalid && entryForm.get('name').touched">
             <div *ngIf="entryForm.get('name').errors.required">Dado obrigatório</div>
             <div *ngIf="entryForm.get('name').errors.minlength">Deve ter no mínimo 2 caracteres</div>
           </div>
@@ -99,8 +99,8 @@
           </div>
         </div>
 
-        <div class="text-danger" *ngIf="entryForm.get('amount').invalid && entryForm.get('amount').touched">
-          <div *ngIf="entryForm.get('amount').errors.required">Dado obrigatório</div>
+        <div class="text-danger" *ngIf="entryForm.get('paid').invalid && entryForm.get('paid').touched">
+          <div *ngIf="entryForm.get('paid').errors.required">Dado obrigatório</div>
         </div>
 
         <!-- categoryId -->

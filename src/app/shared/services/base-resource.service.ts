@@ -15,36 +15,37 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
 
     getAll(): Observable<T[]>{
         return this.http.get(this.apiPath).pipe(
-          catchError(this.handleError),
-          map(this.jsonDataToResources)
+            map(this.jsonDataToResources),
+            catchError(this.handleError)
         )
       }
     
       getById(id: number): Observable<T> {
         return this.http.get(`${this.apiPath}/${id}`).pipe(
-          catchError(this.handleError),
-          map(this.jsonDataToResource)
+            map(this.jsonDataToResource),
+            catchError(this.handleError)
         )
       }
     
       create(resource: T): Observable<T> {
         return this.http.post(this.apiPath, resource).pipe(
-          catchError(this.handleError),
-          map(this.jsonDataToResource)
+            map(this.jsonDataToResource),
+            catchError(this.handleError)
         )
       }
     
       update(resource: T): Observable<T> {
         return this.http.put(`${this.apiPath}`, resource).pipe(
-          catchError(this.handleError),
-          map(() => resource)
+            map(() => resource),
+            catchError(this.handleError)
         )
       }
     
       delete(id: number): Observable<any> {
        return this.http.delete(`${this.apiPath}/${id}`).pipe(
-        catchError(this.handleError),
-        map(() => null))
+            map(() => null),
+            catchError(this.handleError)
+        )
       }
 
       protected jsonDataToResources(jsonData: any[]): T[] {
