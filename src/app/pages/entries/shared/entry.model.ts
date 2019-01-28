@@ -21,7 +21,7 @@ export class Entry extends BaseResourceModel {
         renevue: 'Receita'
     };
 
-    static fromJson(jsonData: any) {
+    static fromJson(jsonData: any): Entry {
         return Object.assign(new Entry(), jsonData);
     }
 
