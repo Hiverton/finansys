@@ -5,10 +5,11 @@ import { CalendarModule } from 'primeng/calendar';
 import { IMaskModule } from 'angular-imask';
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 import { RouterModule } from '@angular/router';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
 
 
 @NgModule({
-  declarations: [BreadCrumbComponent],
+  declarations: [BreadCrumbComponent, PageHeaderComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -22,7 +23,8 @@ import { RouterModule } from '@angular/router';
     CalendarModule,
     IMaskModule,
     RouterModule,
-    BreadCrumbComponent
+    BreadCrumbComponent,
+    PageHeaderComponent
   ]
 })
 export class SharedModule { }
