@@ -6,20 +6,20 @@ pipeline {
 
        stage('NPM Setup') {
           steps {
-             sh 'npm install'
+             bat 'npm install'
          }
        }
 
        stage('Build') {
           steps {
-             sh 'npm build'
+             bat 'npm build'
              
           }
        }
        
        stage('Deploy') {
           steps {
-             sh 'npm start'
+             bat 'npm start'
              
           }
        }
