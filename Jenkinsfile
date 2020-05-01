@@ -1,7 +1,7 @@
 pipeline {
 
     agent any
-    timeout(200) {
+      timeout(time: 1, unit: 'HOURS')
       stages {
 
          stage('NPM Setup') {
@@ -24,5 +24,5 @@ pipeline {
             }
          }
      }
-  }
+ 
 }
