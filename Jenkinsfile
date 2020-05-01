@@ -1,9 +1,8 @@
 pipeline {
 
   agent any
-  timeout(time: 1, unit: 'HOURS') {
-      stages {
-
+    stages {
+      timeout(time: 1, unit: 'HOURS') {
          stage('NPM Setup') {
             steps {
                bat 'npm install'
