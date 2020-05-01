@@ -5,7 +5,7 @@ pipeline {
       
          stage('NPM Setup') {
             steps {
-               bat 'npm install'
+               bat 'npm install --no-optional'
            }
          }
 
