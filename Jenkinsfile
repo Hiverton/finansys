@@ -1,27 +1,28 @@
 pipeline {
 
     agent any
-  
-    stages {
+    timeout(200) {
+      stages {
 
-       stage('NPM Setup') {
-          steps {
-             bat 'npm install'
+         stage('NPM Setup') {
+            steps {
+               bat 'npm install'
+           }
          }
-       }
 
-       stage('Build') {
-          steps {
-             bat 'npm build'
-             
-          }
-       }
-       
-       stage('Deploy') {
-          steps {
-             bat 'npm start'
-             
-          }
-       }
-   }
+         stage('Build') {
+            steps {
+               bat 'npm build'
+
+            }
+         }
+
+         stage('Deploy') {
+            steps {
+               bat 'npm start'
+
+            }
+         }
+     }
+  }
 }
