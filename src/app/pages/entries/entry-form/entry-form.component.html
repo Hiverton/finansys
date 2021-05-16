@@ -34,7 +34,7 @@
 
         <!-- categoryId -->
         <div class="form-group col-md-3">
-          <label for="categoryId">Categoria</label>
+          <label for="categoryId">Tipo de insumo</label>
           <select name="categoryId" id="categoryId" class="form-control" formControlName="categoryId">
             <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
           </select>
