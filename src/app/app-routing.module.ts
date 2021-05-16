@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: 'tipo-insumo', loadChildren:'./pages/categories/categories.module#CategoriesModule'},
-  {path: 'entries', loadChildren:'./pages/entries/entries.module#EntriesModule'}
+  {path: 'insumo', loadChildren:'./pages/entries/entries.module#EntriesModule'}
 ];
 
 @NgModule({
