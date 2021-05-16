@@ -11,7 +11,9 @@ export abstract class BaseResourceListComponent<T extends BaseResourceModel> imp
 
   ngOnInit() {
     this.resourceService.getAll().subscribe(
-        resources => this.resources = resources,
+        resources => {
+          this.resources = resources
+        },
       error => alert("Erro ao carregar a lista")
     )
   }

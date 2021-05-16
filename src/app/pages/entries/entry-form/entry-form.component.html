@@ -1,4 +1,4 @@
-<app-bread-crumb [items] = "[{text:'Lançamento', link:'/entries'},{text:pageTitle}]"></app-bread-crumb>
+<app-bread-crumb [items] = "[{text:'Insumo', link:'/entries'},{text:pageTitle}]"></app-bread-crumb>
 
 <app-page-header
   [page-title]="pageTitle"
@@ -10,29 +10,38 @@
 <form [formGroup]="resourceForm" (submit)="submitForm()">
   <div class="card">
     <div class="card-header">
-      Informações sobre o lançamento
+      Informações sobre o insumo
     </div>
 
     <div class="card-body">
       
       <div class="form-row">
-        <!-- type -->
+        <!-- type 
         <div class="form-group col-md-2">
           <label for="type">Tipo</label>
           <select name="type" id="type" class="form-control" formControlName="type">
             <option *ngFor="let type of typeOptions" [value]="type.value">{{type.text}}</option>
           </select>
           <app-form-field-error [form-control]="resourceForm.get('type')"></app-form-field-error>
-        </div>
+        </div>-->
 
         <!-- name -->
         <div class="form-group col-md-5">
-            <label for="name">Lançamento</label>
-            <input type="text" class="form-control" id="name" formControlName="name">
-            <app-form-field-error [form-control]="resourceForm.get('name')"></app-form-field-error>
-          </div>
+          <label for="name">Insumo</label>
+          <input type="text" class="form-control" id="name" formControlName="name">
+          <app-form-field-error [form-control]="resourceForm.get('name')"></app-form-field-error>
+        </div>
 
-          <!-- valor -->
+        <!-- categoryId -->
+        <div class="form-group col-md-3">
+          <label for="categoryId">Categoria</label>
+          <select name="categoryId" id="categoryId" class="form-control" formControlName="categoryId">
+            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+          </select>
+          <app-form-field-error [form-control]="resourceForm.get('categoryId')"></app-form-field-error>
+        </div>
+
+          <!-- valor 
           <div class="form-group col-md-3">
             <label for="amount">Valor</label>
             <div class="input-group">
@@ -42,9 +51,9 @@
               <input [imask]=imaskConfig type="text" class="form-control text-right" id="amount" formControlName="amount">
               <app-form-field-error [form-control]="resourceForm.get('amount')"></app-form-field-error>
             </div>
-          </div>
+          </div>-->
           
-          <!-- date -->
+          <!-- date 
           <div class="form-group col-md-2">
             <label for="date">Data</label>
             <p-calendar
@@ -59,11 +68,11 @@
 
             </p-calendar>
             <app-form-field-error [form-control]="resourceForm.get('date')"></app-form-field-error>
-          </div>
+          </div>-->
       </div>
 
       <div class="form-row">
-        <!-- paid -->
+        <!-- paid 
         <div class="form-group col-md-2">
           <label for="paid">Pago</label>
           <div class="btn-group">
@@ -75,16 +84,7 @@
             </label>
           </div>
           <app-form-field-error [form-control]="resourceForm.get('paid')"></app-form-field-error>
-        </div>
-
-        <!-- categoryId -->
-        <div class="form-group col-md-3">
-          <label for="categoryId">Categoria</label>
-          <select name="categoryId" id="categoryId" class="form-control" formControlName="categoryId">
-            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
-          </select>
-          <app-form-field-error [form-control]="resourceForm.get('categoryId')"></app-form-field-error>
-        </div>
+        </div>-->
 
         <!-- description -->
         <div class="form-group col-md-7">

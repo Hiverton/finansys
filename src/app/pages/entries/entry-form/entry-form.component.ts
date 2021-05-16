@@ -66,20 +66,22 @@ export class EntryFormComponent extends BaseResourceFormComponent<Category> impl
       name: [null, [Validators.required, Validators.minLength(2)]],
       description:  [null],
       date:  [null],
-      type:  ["expense", [Validators.required]],
+      //type:  ["expense", [Validators.required]],
+      type: [null],
       categoryId:  [null, [Validators.required]],
-      paid:  [true, [Validators.required]],
-      amount: [null, [Validators.required]]
+      //paid:  [true, [Validators.required]],
+      paid: [null],
+      amount: [null]
     })
   }
 
   protected creationPageTittle(): string {
-    return "Cadastro de novo lançamento"
+    return "Cadastro de novo insumo"
   }
 
   protected editionPageTittle(): string {
     const name = this.resource.name || "";
-    return "Editando lançamento: " + name;
+    return "Editando insumo: " + name;
   }
 
   private loadCategories(){

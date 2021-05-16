@@ -27,12 +27,12 @@ export class CategoryFormComponent extends BaseResourceFormComponent<Category> {
   }
 
   protected creationPageTittle(): string {
-    return "Cadastro de nova categoria"
+    return "Cadastro de tipo de insumo"
   }
 
   protected editionPageTittle(): string {
     const categoryName = this.resource.name || "";
-    return "Editando categoria: " + categoryName;
+    return "Editando tipo de insumo: " + categoryName;
   }
 
 }
