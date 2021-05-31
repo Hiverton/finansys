@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/shared/services/login.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  private mostraMenu = false;
+  constructor(
+    private loginService: LoginService
+  ) { }
 
   ngOnInit() {
+    
+  }
+
+  ngAfterContentChecked(){
+    this.mostraMenu = this.loginService.isLoggedIn();
   }
 
 }
